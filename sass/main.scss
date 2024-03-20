@@ -1,0 +1,22 @@
+// utils
+@import './utils/reset';
+@import './utils/variables';
+@import './utils/base';
+
+// comonents
+@import'./components/logo'; 
+@import'./components/button';
+@import'./components/social';
+@import'./components/modal-input';
+
+// Блоки
+@import './pages/main/section-page';
+@import './pages/main/section-edge';
+@import './pages/main/section-about';
+@import './pages/main/section-team';
+@import './pages/main/section-client'; 
+@import './pages/main/section-modal'; 
+
+// header footer 
+@import './components/header';
+@import './components/footer';

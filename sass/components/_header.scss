@@ -1,0 +1,266 @@
+// ---------------------------------------------------------------header---------------------------------------------------------------// ---------------------------------------------------------------Заголовок---------------------------------------------------------------
+.header {
+    border-bottom: 0.5px solid #ECECEC;
+}
+.header__container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+
+    @media (min-width: $desktop){ 
+    display: flex;
+    align-items: center; 
+    }
+}
+.header__logo{
+    @media (min-width: $tablet) and (max-width: $desktop){
+    display: flex;
+    align-items:center;
+    }
+
+    @media(max-width:1199.9px){
+        margin: 16px 0px 14.5px 0px;
+    }
+
+    @media (min-width: $desktop){   
+    padding: 20px 0px; 
+    }
+}
+.header__nav {
+    font-weight: $font-weight-subtitle;
+    line-height:$line-height-submain;
+
+    transition: $animation;
+
+    &-item:hover, &-item:focus{
+        color: $color-brand;
+    }
+
+    @media (min-width: $tablet) and (max-width: $desktop){
+        display: flex;
+        gap: 50px;
+        margin-right: 96px;
+        
+        &-item{
+            padding: 21px 0px 21px 0px;
+            display: flex;
+            align-items:center;      
+        }
+        }
+
+    @media (min-width: $desktop){
+            display: flex;
+        gap: 50px;
+        &-item{
+            padding: 27px 0px 27px 0px;
+        }
+        }
+}
+.header__nav .link{
+    @media (min-width: $desktop){
+    display: block;
+    }
+}
+.header__action {
+    @media (min-width: $tablet){
+        position: relative;
+        &::after{
+            content: "";
+            left: 0;
+            bottom: -0.5px;
+            display: block;
+            border-bottom: 4px solid $color-brand;
+            border-radius: 2px;
+            width: 100%;
+            position: absolute;
+        }
+    }
+    color: $color-brand;
+
+}
+.header__contacts {
+    @media (min-width: $tablet) and (max-width: $desktop){
+        padding-top: 21px;
+        padding-bottom: 20.5px;
+        }
+    
+        @media (min-width: $desktop){
+        display: flex;
+        margin-left: auto;
+        gap: 50px;
+        margin-left: 358px;
+        }
+}
+.mail{
+    @media (min-width: $desktop){
+    display: block;
+    width: 16px; 
+    height: 12px;
+    }
+}
+.contacts__item{
+    @media (min-width: $tablet) and (max-width: 1199.9px){
+    &:not(:first-child){
+        margin-top: 10px;
+    }
+    }
+    @media (min-width: $desktop){
+        display: inline-block;
+        display: flex;
+    }
+}
+.contacts__link {
+    display: flex;
+    align-items: center;
+
+    fill: $color-subtitle;
+    color: $color-subtitle;
+    gap: 10px;
+    font-weight: $font-weight-subtitle;
+    line-height:$line-height-submain;
+
+    transition: $animation;
+
+    &:hover, &:focus{
+        fill: $color-brand;
+        color: $color-brand;
+    }
+
+    @media (min-width: $tablet){
+        display: flex;
+        align-items: center;
+    
+        gap: 10px;
+        }
+}
+.contacts__icon {
+    @media (max-width: 767.9px){
+        display: none;
+    }
+    @media (min-width: $tablet){
+    width: 16px;
+    height: 12px;
+    }
+}
+
+//---------- Меню
+.header-menu__button{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    z-index: 2;
+
+    @media (min-width: $tablet){
+        display: none;
+    }
+}
+    // отображение кнопок 
+.header-menu__button .button__icon-hide{
+    display: none;
+}
+.header-menu__button.is-open  .button__icon-hide{
+    display: block;
+}
+.header-menu__button.is-open .button__icon-expand{
+    display: none;
+}
+    //Меню
+.header{
+    position: relative;
+}
+.menu__container{
+    &.is-open{
+        opacity: 100;
+        z-index: 1;
+        padding: 40px 15px 15px 40px;
+    }
+    @media (max-width: 395px){
+    padding-bottom: 30px;
+    }
+    @media (max-width: 767.9px){
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0,0,0,.04), 0px 2px 4px rgba(0,0,0,.08), 0px 1px 3px rgba(0,0,0,.16);
+    }
+
+
+    @media (min-width: $tablet){
+    display: flex;
+    }
+}
+
+.menu__container .header__nav{
+
+    @media (max-width: 767.9px){
+    margin-bottom: auto;
+    &-item{
+        font-size: $fs-40;
+        font-weight: 500;
+        line-height: $line-height-submain;
+    }
+    &-item:not(:last-child){
+        margin-bottom: 32px;
+    }
+}
+}
+.menu__container .header__action{
+    @media (max-width: 767.9px){
+    margin-bottom: 36px;
+    }
+}
+.menu__container .header__contacts{
+    @media (max-width: 767.9px){
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+    .contacts__link-tel{
+        display: inline-block;
+        font-size: $fs-34;
+        font-weight: 500;
+        color: $color-brand;
+        line-height: $line-height-submain;
+        margin-bottom: 32px;
+    }
+    .contacts__link-mail{
+        font-size: $fs-24;
+        font-weight: 500;
+        line-height: $line-height-submain;
+    }
+    }
+}
+.menu__social{
+    display: flex;
+    flex-wrap: wrap;
+    &-item:not(:last-child){
+        padding-right: 10.5px;
+        border-right: 1px solid rgba(33, 33, 33, 0.2) ;
+    }
+    &-item:not(:first-child){
+        padding-left: 10.5px;
+    }
+    @media (max-width: 404px){
+    &-item:nth-child(-n+4){
+        padding-left: 5px;
+    }
+    }
+
+    &-link{
+        font-size: $fs-18;
+        font-weight: 500;
+        line-height: 1.22;
+        color: $color-brand;
+    } 
+    @media (min-width: $tablet){
+        display: none;
+    }
+}

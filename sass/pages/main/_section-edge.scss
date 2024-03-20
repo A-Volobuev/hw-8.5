@@ -1,0 +1,71 @@
+
+// ---------------------------------------------------------------Блок edge---------------------------------------------------------------
+.section__edge{
+    padding: 60px 0px;
+
+    @media (min-width: $desktop){
+    padding: 94px 0px;
+    } 
+}
+.edge__list{
+    @media (min-width: $tablet){
+    display: grid;
+    grid-template: repeat(2,1fr)/repeat(2,1fr);
+    gap: 30px;
+    }
+    @media (min-width: $desktop){
+    display: flex;
+    align-items:flex-start;
+    gap:30px;
+    }
+}
+.edge__column{
+    &:not(:first-child){
+        @media (max-width: $mobile){
+        margin-top: 30px;
+        }
+    }
+    @media (min-width: $desktop){
+    flex: 0 1 25%;
+    }
+    
+}
+.column__title{
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+
+    font-weight: $font-weight-title;
+    line-height: $line-height-submain;
+
+    @media (min-width: $desktop){
+    display: block;
+    }
+}
+.column__icon-box{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+    background-color:$color-bg;
+    margin-bottom: 30px;
+    height: 120px;
+}
+.column__icon{
+    height: 70px;
+    width: 70px;
+}
+.edge__column .column__text{
+    display: block;
+    margin-top: 10px;
+    line-height: $line-height-main;
+
+    color:$color-subtitle;
+
+    @media (min-width: $desktop){
+    display: block;
+    }
+}
+
+// анимации
+

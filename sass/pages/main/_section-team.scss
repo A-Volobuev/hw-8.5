@@ -1,0 +1,86 @@
+
+// ---------------------------------------------------------------Блок team---------------------------------------------------------------
+.team{
+    padding: 60px 0px;
+    background-color:$color-bg;
+
+    @media (min-width: $desktop){
+    padding: 94px 0px;
+    }
+}
+// Заголовок
+.team__title{
+    font-size: $fs-28;
+    font-weight: $font-weight-title;
+    line-height: $line-height-submain;
+    text-align: center;
+    
+    @media (min-width: $desktop){
+    font-size: $fs-36;
+
+    grid-area: title;
+    }
+}
+// Список
+.team__list{
+    margin-top: 30px;
+
+    @media (min-width: $tablet){
+        display: grid;
+        grid-template: repeat(2, 1fr)/ repeat(2, 1fr); 
+        gap: 30px;
+    }
+
+    @media (min-width: $desktop){
+    display: grid;
+
+    grid-template: 1fr/ repeat(4, 1fr); 
+    gap: 30px;
+
+    margin-top: 50px;
+    }
+}
+// Настройка колонок
+.team__column{
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 0px 0px 4px 4px;
+    background-color: $color-white;
+    box-shadow: 0px 2px 1px  rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 2px  rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 3px 3px  rgba(0, 0, 0, 0.12);
+
+    &:not(:first-child){
+        @media (max-width: $tablet){
+        margin-top: 30px;
+        }
+    }
+
+    @media (min-width: $desktop){
+    flex: 0 1 25%;
+    } 
+}
+.team__image{
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+.team__name{
+    color:$color-title;
+    font-size: $fs-16;
+    font-weight: $font-weight-subtitle;
+    line-height: $line-height-submain;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.team__position{
+    font-size: $fs-16;
+    line-height: $line-height-submain;
+    text-align: center;
+    color: $color-subtitle;
+}
+// Ссылки
+.team__social{
+    margin: 16px 0px 30px 0px;
+}
+

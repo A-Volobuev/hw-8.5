@@ -1,0 +1,277 @@
+// ---------------------------------------------------------------Блок modal---------------------------------------------------------------
+// Кнопка main
+.backdrop{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: $color-white;
+    border-radius:4px;
+
+    @media (max-width: 390px){
+        padding: 0 5px;
+        }
+
+    @media (max-width: $mobile){
+    min-width: 90%;
+    height: auto;
+    }
+
+    @media (min-width: $mobile){
+    width: 450px;
+    padding: 15px;
+    height: auto;
+    }
+
+    @media (min-width: $desktop){
+    min-height: 581px;
+    min-width: 528px;
+    padding: 15px;
+    }
+}
+.modal__close-button{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: none;
+    border: none;
+}
+// Модальное окно
+.modal__container{
+    box-sizing:content-box;
+    margin: 0px auto;
+    max-width: 370px;
+    @media (max-width: 479.9px){
+        padding: 40px 0px;
+    }
+
+    @media (min-width: $desktop){
+    max-width: 448px;
+    }
+}
+.modal__title{
+    font-size: 20px;
+    line-height:1.5;
+    font-weight: $font-weight-title;
+    text-align: center;
+    padding-bottom: 12px;
+
+    @media (min-width: $mobile){
+        margin-top: 20px;
+        }
+
+    @media (min-width: $desktop){
+    line-height: $line-height-submain;
+    }
+}
+.modal__form-field:not(:first-child){
+    margin-top: 10px;
+}
+.modal__form-field:focus-within .modal__form-label{
+    color: $color-brand;
+}
+.modal__form-label{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: $line-height-submain;
+    color:$color-subtitle;
+}
+.modal__input-box{
+    position: relative;
+    margin-top: 4px;
+}
+.modal__input-icon{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+.modal__textarea{
+    height: auto;
+    resize: none;
+
+    padding: 12px 16px;
+}
+// Лицензия
+.modal-form__check-field{
+    margin-top: 20px;
+}
+.modal-form__circs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:flex-start;
+    // align-items: center;
+    // justify-content: center;
+
+    @media (min-width:345px){
+        align-items:center;
+    }
+    &-text{
+    color: $color-subtitle;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+
+    @media (min-width: $desktop){
+    font-size: 14px;
+    line-height: $line-height-main;
+    }
+    }
+}
+.modal-form__check{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    // position: absolute;
+}
+.modal-form__check-icon{
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    
+    border: 1.7px solid $color-logo;
+    border-radius:4px;
+
+    // background-repeat: no-repeat;
+    // background-image: url(../images/modal-form/check-icon.svg);
+
+    margin-right: 7px;
+}
+.modal-form__check:checked + .modal-form__check-icon{
+    background-repeat: no-repeat;
+    background-image: url(../images/modal-form/check-icon-active.svg);
+    background-color: $color-brand;
+    background-size: 100% 100%;
+    border-radius: 3px;
+}
+.modal-form__circs-link {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;
+    color:$color-brand;
+    text-decoration: underline;
+
+    @media (min-width: $desktop){
+        font-size: 14px;
+        line-height: $line-height-main;
+    }
+}
+
+// Модальная кнопка
+.modal-form__button{
+    display: block;
+    
+    margin: 10px auto 0px auto;
+    padding: 10px 52px;
+}
+
+
+.modal__input:focus + .modal__form-label{
+    color: $color-brand;
+}
+
+// select
+.modal-form__select-field{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 10px;
+}
+.modal__select {
+    width: 200px;
+}
+
+.dropdown {
+    width: 100%;
+    position: relative;
+    display: block;
+    color: white; 
+    .label{
+    color: $color-title;
+    text-align: center;
+    font-weight: $font-weight-subtitle;
+    margin-bottom: 5px;
+    }
+    .select {
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: $color-footer-bg;
+    border-radius: 5px;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    .selected {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &.placeholder {
+        color: $placeholder;
+        }
+    }
+    .caret {
+        margin-left: 10px;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid white;
+        transition: 0.3s;
+    }
+    &:hover {
+        background-color: $hover-black;
+    }
+    }
+    .menu {
+    visibility: hidden;
+    background-color: $black;
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: -80%;
+    left:200px;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+    z-index: 1;
+    li {
+        cursor: pointer;
+        padding: 10px;
+        &:hover {
+        background-color: $hover-black;
+        }
+    }
+    }
+    .menu-open {
+    visibility: visible;
+    opacity: 1;
+    overflow: scroll;
+    height: 160px;
+    }
+}
+
+.caret-rotate {
+    transform: rotate(90deg);
+}
+
+.active {
+    background-color: $hover-black;
+}
