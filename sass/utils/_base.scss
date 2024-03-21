@@ -4,6 +4,7 @@ body{
     color: $color-title; 
     font-size: 14px;
     font-weight: 400;
+    overflow-x: hidden;
 
     // Прокрут основной страницы при открытом модальном окне
     &.modal-open{
